@@ -119,4 +119,9 @@ then
 else
 	echo "${redColour}[*]${endColour}${yellowColour} La sesion ya esta creada $SESSION_TMUX${endColur}\n"
 fi
-tmux attach-session -t $SESSION_TMUX
+# Verify TMUX session
+if [[ -z "$TMUX" ]]; then
+  tmux attach-session -t $SESSION_TMUX
+else
+  tmux switch-client -t $SESSION_TMUX
+fi
