@@ -64,10 +64,10 @@ then
     tmux split-window -v -p 20 && sleep $tiempo
     #------------------------------------------------------------------------Segundo Panel
     tmux select-pane -t 2
-    tmux send-keys "cd ~/Estudio" C-m && sleep $tiempo
+    tmux send-keys "cd ~/Estudio/dbz/statusweb" C-m && sleep $tiempo
     tmux send-key 'eval "$(ssh-agent -s)"' C-m && sleep $tiempo
     tmux send-key 'clear' C-m && sleep $tiempo
-    tmux send-key 'ssh-add ~/.ssh/id_rsa' C-m && sleep $tiempo
+    tmux send-key 'bash webstatus.sh 20 1' C-m && sleep $tiempo
     tmux split-window -v -p 10 && sleep $tiempo
     #tmux select-window -t 1
     #------------------------------------------------------------------------Tercer Panel
@@ -81,31 +81,32 @@ then
     tmux new-window -t "StartDBZ" -n "K8sDBZ Work"  && sleep $tiempo
     tmux send-keys "cd ~/Estudio" C-m && sleep $tiempo
     tmux send-key 'eval "$(ssh-agent -s)"' C-m && sleep $tiempo
+    tmux send-key 'evince ~/Estudio/linux/asset-v1_LinuxFoundationX+LFD109x+1T2022+type@asset+block@LFD109x-labs_V2022-03-22.pdf &' C-m && sleep $tiempo
     tmux send-key 'clear' C-m  && sleep $tiempo
     tmux send-key 'ssh-add ~/.ssh/id_rsa' C-m && sleep $tiempo
     tmux split-window -v -p 50 && sleep $tiempo
     #------------------------------------------------------------------------Segundo Panel
     tmux select-pane -t 2
-    tmux send-keys "cd ~/Estudio" C-m && sleep $tiempo
+    tmux send-keys "cd /mnt/c/DBZ/DBZ\ ESTUDIO/Selenium/Heon" C-m && sleep $tiempo
     tmux send-key 'eval "$(ssh-agent -s)"' C-m && sleep $tiempo
     tmux send-key 'clear' C-m && sleep $tiempo
-    tmux send-key 'ssh-add ~/.ssh/id_rsa' C-m && sleep $tiempo
+    tmux send-key 'll' C-m && sleep $tiempo
     tmux split-window -v -p 25 && sleep $tiempo
     #tmux select-window -t 1
     #------------------------------------------------------------------------Tercer Panel
     tmux select-pane -t 3
-    tmux send-keys "cd ~/Estudio" C-m && sleep $tiempo
+    tmux send-keys "cd ~/Estudio/dbz/statusweb" C-m && sleep $tiempo
     tmux send-key 'eval "$(ssh-agent -s)"' C-m && sleep $tiempo
     tmux send-key 'clear' C-m && sleep $tiempo
-    tmux send-key 'ssh-add ~/.ssh/id_rsa' C-m && sleep $tiempo
+    tmux send-key 'tail -f logwebstatus.log | grep FAIL' C-m && sleep $tiempo
     tmux split-window -v -p 10 && sleep $tiempo
     #tmux select-window -t 1
     #------------------------------------------------------------------------Cuarta Panel
     tmux select-pane -t 4
-    tmux send-keys "cd ~/Estudio" C-m && sleep $tiempo
+    tmux send-keys "cd ~/Estudio/dbz/statusweb" C-m && sleep $tiempo
     tmux send-key 'eval "$(ssh-agent -s)"' C-m && sleep $tiempo
     tmux send-key 'clear' C-m && sleep $tiempo
-    tmux send-key 'ssh-add ~/.ssh/id_rsa' C-m && sleep $tiempo
+    tmux send-key 'tail -18 logwebstatus.log' C-m && sleep $tiempo
     tmux select-window -t 1 
     tiempo=2
     tmux send-key 'clear' C-m && sleep $tiempo
